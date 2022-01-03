@@ -4,12 +4,14 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import Home from './app/screens/Home';
 import CreateEmployee from './app/screens/CreateEmployee';
+import Profile from './app/screens/Profile';
 
 export default function App() {
   return (
     <View style={styles.container}>
       {/* <Home /> */}
-      <CreateEmployee />
+      {/* <CreateEmployee /> */}
+      <Profile />
     </View>
   );
 }
