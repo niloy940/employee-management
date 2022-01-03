@@ -1,10 +1,15 @@
 import { LinearGradient } from 'expo-linear-gradient'
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
 import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, Linking, Platform, StyleSheet, Text, View } from 'react-native'
 import { Button, Card, Title } from 'react-native-paper'
 
 export default function Profile() {
+	const openDial = () => {
+		Platform.OS === 'android' ? Linking.openURL('tel:01676944727') : Linking.openURL('telprompt:01676944727')
+	}
+
+
 	return (
 		<View style={styles.root}>
 			<LinearGradient
@@ -21,14 +26,16 @@ export default function Profile() {
 				<Text style={{ fontSize: 18 }}>Software Developer</Text>
 			</View>
 
-			<Card style={styles.mycard}>
+			<Card style={styles.mycard} onPress={() => {
+				Linking.openURL('mailto:niloy940@gmail.com')
+			}}>
 				<View style={styles.cardContent}>
 					<MaterialIcons name="email" size={32} color="#006aff" />
-					<Text style={styles.text}>niloyquazi@gmail.com</Text>
+					<Text style={styles.text}>niloy940@gmail.com</Text>
 				</View>
 			</Card>
 
-			<Card style={styles.mycard}>
+			<Card style={styles.mycard} onPress={() => openDial()}>
 				<View style={styles.cardContent}>
 					<Entypo name="phone" size={32} color="#006aff" />
 					<Text style={styles.text}>01676944727</Text>
